@@ -33,6 +33,7 @@ int main() {
 	buft = shmat(buftid, NULL, 0);
 	memset(buft, 0, BUFT_LENGTH*sizeof(char));
 
+	printf("[main] semid %d\n", semid);
 	debug_print_address("[main] bufs ", bufs);
 	debug_print_address("[main] buft ",buft);
 

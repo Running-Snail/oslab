@@ -15,6 +15,7 @@ int main() {
 	bufs = (char*)shmat(bufsid, NULL, 0);
 	buft = (char*)shmat(buftid, NULL, 0);
 
+	printf("[copy] semid %d\n", semid);
 	debug_print_address("[copy] bufs ", bufs);
 	debug_print_address("[copy] buft ", buft);
 

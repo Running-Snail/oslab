@@ -4,7 +4,7 @@
 #define SEM_KEY 0x66
 #define BUFS_KEY 0x67
 #define BUFT_KEY 0x68
-#define BUFS_LENGTH 2
+#define BUFS_LENGTH 32
 #define BUFT_LENGTH 64
 #define SOURCE_FILE "source.txt"
 #define DEST_FILE "dest.txt"

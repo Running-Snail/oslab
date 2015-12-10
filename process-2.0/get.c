@@ -17,6 +17,7 @@ int main() {
 	}
 
 	bufs = (char*)shmat(bufsid, NULL, 0);
+	printf("[get] semid %d\n", semid);
 	debug_print_address("[get] bufs ", bufs);
 
 	while (1) {

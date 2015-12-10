@@ -18,6 +18,7 @@ int main() {
 
 	buft = (char*)shmat(buftid, NULL, 0);
 
+	printf("[put] semid %d\n", semid);
 	debug_print_address("[put] buft ", buft);
 
 	while (running) {
