@@ -53,7 +53,8 @@ void mode2str(mode_t st_mode, char *str) {
 }
 
 void printline(int depth, struct stat *statbuf, char *name) {
-    char mode[11];
+    int i;
+	char mode[11];
     char date[36];
 	int color = CLR_DEFAULT;
 	struct passwd *pwd;
@@ -67,7 +68,9 @@ void printline(int depth, struct stat *statbuf, char *name) {
 	else if (mode[0] == 'c') color = CLR_CHAR;
 	else if (mode[0] == 's') color = CLR_SOCK;
 	else if (mode[3] == 'x' || mode[6] == 'x' || mode[9] == 'x') color = CLR_EXEC;
-		printf("%d\t%s %d %s %s %d %s %s%s\033[0m\n", depth, mode, statbuf->st_nlink, pwd->pw_name, grp->gr_name, statbuf->st_size, date, COLORS[color], name);
+	// tabs
+	for (i=0; i<depth; i++) printf(" ");
+	printf("%s %ld %s %s %ld %s %s%s\033[0m\n", mode, statbuf->st_nlink, pwd->pw_name, grp->gr_name, statbuf->st_size, date, COLORS[color], name);
 }
 
 void printdir(char *dir, int depth) {
